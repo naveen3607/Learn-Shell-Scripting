@@ -47,9 +47,9 @@ Output redirection in shell scripting allows you to change the destination of th
 3. `2>` (Greater Than Symbol Followed by 2): This operator redirects standard error (stderr) to a file. `command 2> error.txt`
 
 4. `2>>` (Double Greater Than Symbol Followed by 2): This operator appends standard error (stderr) to a file. `command 2>> error.txt`
-   ```
+
 5. `&>` or `&>>`: These operators redirect both standard output and standard error to a file. `command &> output_and_error.txt`
-   ```
+
 6. `<` (Less Than Symbol): This operator is used for input redirection, allowing you to read data from a file as input for a command. `command < input.txt`
 
 7. `<<` (Double Less than symbol): Allows you to create a here document, which is a way to provide input to a command within your script. The content between << EOF and EOF is treated as input to the command. This is particularly useful when you want to provide multiple lines of input or specify configuration settings.  
@@ -152,7 +152,5 @@ Here's a breakdown of how a case statement works:
 - `;;` (double semicolon): Separates each code block associated with a pattern.
 - `*)`: A wildcard pattern that matches anything. It is used as a default case if none of the patterns match.
 - `esac`: Marks the end of the case statement.
-
-Here's an example of a case statement in a shell script:
 
 You can have as many patterns as needed, and each pattern can contain multiple conditions. Case statements are particularly useful when you have a finite number of options to check, making your code more structured and easier to read than a series of `if`/`elif`/`else` statements for each condition.
