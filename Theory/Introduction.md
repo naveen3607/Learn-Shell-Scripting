@@ -100,3 +100,59 @@ In shell scripting, test operators are used to evaluate conditions and return a 
 These operators can be used in conditional statements such as `if`, `elif`, and `while` to perform tests and make decisions within shell scripts. 
 Keep in mind that you can also use the `[[ ]]` construct in Bash for more advanced and flexible conditional tests, which provide additional capabilities, such as pattern matching and logical operators.
 
+## If/Elif/Else
+
+The `if`, `elif` (short for "else if"), and `else` statements are used in shell scripting and various programming languages to control the flow of a program based on conditional tests.
+They allow you to execute different blocks of code depending on whether certain conditions are true or false.
+Here's the basic syntax for using `if`, `elif`, and `else` statements in shell scripts:
+`if condition1; then
+    # Code to execute if condition1 is true
+elif condition2; then
+    # Code to execute if condition1 is false and condition2 is true
+else
+    # Code to execute if neither condition1 nor condition2 is true
+fi`
+
+- `if`: The `if` statement is used to test a condition. If the condition is true, the code block following `then` is executed.
+
+- `elif`: The `elif` statement is used to test an alternative condition if the previous `if` condition is false. You can have multiple `elif` statements to test different conditions sequentially.
+
+- `else`: The `else` statement is optional and is executed if none of the previous conditions (including the `if` and any `elif` statements) are true.
+
+You can use `if`, `elif`, and `else` statements to handle more complex conditional logic and make decisions within your shell scripts based on various conditions.
+
+## Case statements
+They are better than if/elif/else when checking for multiple values is easier to read
+
+In shell scripting, a case statement is used for conditional branching, allowing you to execute different blocks of code based on the value of a variable or an expression. A case statement is particularly useful when you have multiple conditions to check and want a more structured and readable way to handle them.
+
+The basic syntax of a case statement in Bash looks like this:
+`case expression in
+    pattern1)
+        # Code to execute if expression matches pattern1
+        ;;
+    pattern2)
+        # Code to execute if expression matches pattern2
+        ;;
+    ...
+    patternN)
+        # Code to execute if expression matches patternN
+        ;;
+    *)
+        # Default code to execute if none of the patterns match
+        ;;
+esac`
+
+Here's a breakdown of how a case statement works:
+- `case`: Begins the case statement.
+- `expression`: The value or variable you want to evaluate.
+- `in`: Separates the expression from the patterns.
+- `pattern1`, `pattern2`, ..., `patternN`: Patterns to match against the expression.
+- `)` (right parenthesis): Marks the end of each pattern.
+- `;;` (double semicolon): Separates each code block associated with a pattern.
+- `*)`: A wildcard pattern that matches anything. It is used as a default case if none of the patterns match.
+- `esac`: Marks the end of the case statement.
+
+Here's an example of a case statement in a shell script:
+
+You can have as many patterns as needed, and each pattern can contain multiple conditions. Case statements are particularly useful when you have a finite number of options to check, making your code more structured and easier to read than a series of `if`/`elif`/`else` statements for each condition.
